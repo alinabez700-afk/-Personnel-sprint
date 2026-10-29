@@ -2,7 +2,7 @@
 
 ШАБЛОН: заповнити після реального запуску. Числа тут не вигадані — вставте вивід вашої консолі.
 
-- Дата / машина / JDK: `<дд.мм.рррр>` / `<ОС>` / `java -version`
+- Дата / машина / JDK: `29.10.2026` / `<ОС>` / `java -version`
 - Команда 1 (юніт): `mvn clean test` → `Tests run: __, Failures: __, Errors: __, Skipped: 0`
 - Команда 2 (усе): `mvn test -DexcludedGroups=none` → `Tests run: __, Failures: __, Errors: 0`
 - Звіти: `target/surefire-reports/*.txt`, `TEST-*.xml`
