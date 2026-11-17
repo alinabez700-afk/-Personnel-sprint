@@ -84,11 +84,11 @@ Reporter: Вилінська Злата · Date: 17.11.2026 · Рецензен�
 ## Зведення
 | Bug ID | Severity | Priority | Вимога | Тест | Рецензент |
 |--------|----------|----------|--------|------|-----------|
-| BUG-007 LeaveCalculator.accrued не обмежує нарахування 24 днями на рік | Major | P2 | BL-10 | LeaveCalculatorTest.accruedIsTwoPerMonthCappedAt24 | Аліна ⏳ |
-| BUG-008 LeaveCalculator.durationDays не враховує останній день періоду | Major | P2 | BL-30 | LeaveCalculatorTest.durationWithinWorkWeek | Аліна ⏳ |
-| BUG-009 PayrollCalculator.net нараховує військовий збір від суми після ПДФО | Major | P2 | BL-50 | PayrollCalculatorTest.netIsGrossTimes077 | Аліна ⏳ |
-| BUG-010 PayrollCalculator.hourlyRate округлює вниз замість HALF_UP | Minor | P3 | BL-60 | PayrollCalculatorTest.hourlyRateIsMonthlyDividedBy168 | Аліна ⏳ |
-| BUG-011 EmployeeValidator.isValidTaxId приймає РНОКПП коротший за 10 цифр | Major | P2 | BL-80 (F-50) | EmployeeValidatorTest.taxIdExactlyTenDigits | Аліна ⏳ |
-| BUG-012 EmployeeValidator.isOldEnough враховує лише рік, а не повні роки на дату найму | Major | P2 | BL-80 (F-50) | EmployeeValidatorTest.minimumAgeSixteenOnHireDate | Аліна ⏳ |
+| BUG-007 LeaveCalculator.accrued не обмежує нарахування 24 днями на рік | Major | P2 | BL-10 | LeaveCalculatorTest.accruedIsTwoPerMonthCappedAt24 | Аліна ✅ |
+| BUG-008 LeaveCalculator.durationDays не враховує останній день періоду | Major | P2 | BL-30 | LeaveCalculatorTest.durationWithinWorkWeek | Аліна ✅ |
+| BUG-009 PayrollCalculator.net нараховує військовий збір від суми після ПДФО | Major | P2 | BL-50 | PayrollCalculatorTest.netIsGrossTimes077 | Аліна ✅ |
+| BUG-010 PayrollCalculator.hourlyRate округлює вниз замість HALF_UP | Minor | P3 | BL-60 | PayrollCalculatorTest.hourlyRateIsMonthlyDividedBy168 | Аліна ✅ |
+| BUG-011 EmployeeValidator.isValidTaxId приймає РНОКПП коротший за 10 цифр | Major | P2 | BL-80 (F-50) | EmployeeValidatorTest.taxIdExactlyTenDigits | Аліна ✅  |
+| BUG-012 EmployeeValidator.isOldEnough враховує лише рік, а не повні роки на дату найму | Major | P2 | BL-80 (F-50) | EmployeeValidatorTest.minimumAgeSixteenOnHireDate | Аліна ✅  |
 
 Норматив спринта 4: ≥3 дефекти з 6 закладених — знайдено 6 з 6 (BL-10, BL-30, BL-50, BL-60, BL-80 × 2).
