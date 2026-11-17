@@ -1,0 +1,4 @@
+BUG-009 — PayrollCalculator.net нараховує військовий збір від суми після ПДФО
+Тест: PayrollCalculatorTest.netIsGrossTimes077 ([10000.00, 7700.00], [12345.67, 9506.17], [1000.00, 770.00]); PayrollCalculatorTest.netRoundsHalfUp
+Фактичний результат: net(10000.00) = 7790.00 замість 7700.00 (різниця 90.00 грн)
+Джерело: виконання тест-класів проти v1 (замініть на фрагмент target/surefire-reports/*.txt після вашого mvn clean test)

@@ -1,0 +1,4 @@
+BUG-011 — EmployeeValidator.isValidTaxId приймає РНОКПП коротший за 10 цифр
+Тест: EmployeeValidatorTest.taxIdExactlyTenDigits; EmployeeValidatorTest.validateAllWrongReturnsAllCodes (той самий дефект)
+Фактичний результат: isValidTaxId("123456789") = true; validate не повертає TAX_ID для "123"
+Джерело: виконання тест-класів проти v1 (замініть на фрагмент target/surefire-reports/*.txt після вашого mvn clean test)

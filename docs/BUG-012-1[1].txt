@@ -1,0 +1,4 @@
+BUG-012 — EmployeeValidator.isOldEnough враховує лише рік, а не повні роки на дату найму
+Тест: EmployeeValidatorTest.minimumAgeSixteenOnHireDate (запуски [2010-09-16, 2026-09-15, false] і [2008-02-29, 2024-02-28, false])
+Фактичний результат: isOldEnough(2010-09-16, 2026-09-15) = true замість false (до 16 років лишається 1 день)
+Джерело: виконання тест-класів проти v1 (замініть на фрагмент target/surefire-reports/*.txt після вашого mvn clean test)

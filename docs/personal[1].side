@@ -1,0 +1,42 @@
+{
+  "id": "6a1f1c1e-0000-4000-8000-000000000001",
+  "version": "2.0",
+  "name": "personal-plus",
+  "url": "https://opensource-demo.orangehrmlive.com",
+  "tests": [
+    {
+      "id": "6a1f1c1e-0000-4000-8000-000000000011",
+      "name": "TC-001 F-10 valid login opens Dashboard",
+      "commands": [
+        {"id": "c1000001-0000-4000-8000-000000000001", "comment": "", "command": "open", "target": "/web/index.php/auth/login", "targets": [], "value": ""},
+        {"id": "c1000001-0000-4000-8000-000000000002", "comment": "", "command": "waitForElementVisible", "target": "css=input[name='username']", "targets": [], "value": "20000"},
+        {"id": "c1000001-0000-4000-8000-000000000003", "comment": "", "command": "type", "target": "css=input[name='username']", "targets": [], "value": "Admin"},
+        {"id": "c1000001-0000-4000-8000-000000000004", "comment": "", "command": "type", "target": "css=input[name='password']", "targets": [], "value": "admin123"},
+        {"id": "c1000001-0000-4000-8000-000000000005", "comment": "", "command": "click", "target": "css=button[type='submit']", "targets": [], "value": ""},
+        {"id": "c1000001-0000-4000-8000-000000000006", "comment": "precondition: hard check", "command": "waitForElementVisible", "target": "css=.oxd-topbar-header-breadcrumb h6", "targets": [], "value": "20000"},
+        {"id": "c1000001-0000-4000-8000-000000000007", "comment": "hard assert", "command": "assertText", "target": "css=.oxd-topbar-header-breadcrumb h6", "targets": [], "value": "Dashboard"},
+        {"id": "c1000001-0000-4000-8000-000000000008", "comment": "soft verify", "command": "verifyElementPresent", "target": "css=.oxd-userdropdown-tab", "targets": [], "value": ""}
+      ]
+    },
+    {
+      "id": "6a1f1c1e-0000-4000-8000-000000000012",
+      "name": "TC-002 F-20 wrong password shows Invalid credentials",
+      "commands": [
+        {"id": "c2000001-0000-4000-8000-000000000001", "comment": "", "command": "open", "target": "/web/index.php/auth/login", "targets": [], "value": ""},
+        {"id": "c2000001-0000-4000-8000-000000000002", "comment": "", "command": "waitForElementVisible", "target": "css=input[name='username']", "targets": [], "value": "20000"},
+        {"id": "c2000001-0000-4000-8000-000000000003", "comment": "", "command": "type", "target": "css=input[name='username']", "targets": [], "value": "Admin"},
+        {"id": "c2000001-0000-4000-8000-000000000004", "comment": "", "command": "type", "target": "css=input[name='password']", "targets": [], "value": "wrong_password_123"},
+        {"id": "c2000001-0000-4000-8000-000000000005", "comment": "", "command": "click", "target": "css=button[type='submit']", "targets": [], "value": ""},
+        {"id": "c2000001-0000-4000-8000-000000000006", "comment": "", "command": "waitForElementVisible", "target": "css=.oxd-alert-content-text", "targets": [], "value": "20000"},
+        {"id": "c2000001-0000-4000-8000-000000000007", "comment": "soft verify", "command": "verifyText", "target": "css=.oxd-alert-content-text", "targets": [], "value": "Invalid credentials"},
+        {"id": "c2000001-0000-4000-8000-000000000008", "comment": "soft verify: still on login page", "command": "verifyElementPresent", "target": "css=button[type='submit']", "targets": [], "value": ""}
+      ]
+    }
+  ],
+  "suites": [
+    {"id": "6a1f1c1e-0000-4000-8000-000000000021", "name": "Login", "persistSession": false, "parallel": false, "timeout": 300,
+     "tests": ["6a1f1c1e-0000-4000-8000-000000000011", "6a1f1c1e-0000-4000-8000-000000000012"]}
+  ],
+  "urls": ["https://opensource-demo.orangehrmlive.com/"],
+  "plugins": []
+}
