@@ -4,9 +4,9 @@
 
 | BL | Метод | Правило (SRS 1.1) | Тести | Межі / помилки | Пов'язані F / TC | Автор | Рецензент (призначений) · review |
 |----|-------|-------------------|-------|----------------|------------------|-------|-----------|
-| BL-10 | LeaveCalculator.accrued | min(2×міс, 24) | LeaveCalculatorTest.accruedIsTwoPerMonthCappedAt24 (6); accruedNegativeMonthsThrows | 0, 12, 13, 100; −1 → IAE | F-110 | Морквич Ю. | Вилінська З. · ⏳ очікує review |
+| BL-10 | LeaveCalculator.accrued | min(2×міс, 24) | LeaveCalculatorTest.accruedIsTwoPerMonthCappedAt24 (6); accruedNegativeMonthsThrows | 0, 12, 13, 100; −1 → IAE | F-110 | Морквич Ю. | Вилінська З. · ✅|
 | BL-20 | LeaveCalculator.carryOver | min(unused, 5) | carryOverIsCappedAtFive (6); carryOverNegativeThrows | 4, 5, 6; −1 → IAE | F-110 | Морквич Ю. | Вилінська З. · ✅ |
-| BL-30 | LeaveCalculator.durationDays | робочі дні включно, без сб/нд | durationWithinWorkWeek; durationSkipsWeekends; durationWeekendOnlyIsZero; durationInvalidInputThrows | пн–пт=5, пт–пн=2, сб–пн=1, сб–нд=0; start>end, null → IAE | F-70, TC-012 | Морквич Ю. | Вилінська З. · ⏳ очікує review |
+| BL-30 | LeaveCalculator.durationDays | робочі дні включно, без сб/нд | durationWithinWorkWeek; durationSkipsWeekends; durationWeekendOnlyIsZero; durationInvalidInputThrows | пн–пт=5, пт–пн=2, сб–пн=1, сб–нд=0; start>end, null → IAE | F-70, TC-012 | Морквич Ю. | Вилінська З. · ✅|
 | BL-40 | LeaveCalculator.canRequest | 1 ≤ duration ≤ balance | canRequestBoundaries (7) | =баланс, баланс+1, 0 | F-70, GUI-70, TC-010, TC-011 | Морквич Ю. | Вилінська З. · ✅ |
 | BL-50 | PayrollCalculator.net | gross×0,77, HALF_UP | netIsGrossTimes077 (4); netRoundsHalfUp; netOfOneKopiyka; netInvalidInputThrows | 0, 0.01, 100.50; −0.01, null → IAE | — | Вилінська З. | Безугла А. · ✅ |
 | BL-60 | PayrollCalculator.hourlyRate | monthly/168, HALF_UP | hourlyRateIsMonthlyDividedBy168 (4); hourlyRateInvalidInputThrows | 0, 10000, 25000; −1, null → IAE | — | Вилінська З. | Безугла А. · ✅|
