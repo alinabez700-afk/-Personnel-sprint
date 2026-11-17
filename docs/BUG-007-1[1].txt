@@ -1,4 +1,4 @@
 BUG-007 — LeaveCalculator.accrued не обмежує нарахування 24 днями на рік
 Тест: LeaveCalculatorTest.accruedIsTwoPerMonthCappedAt24 (запуски [13, 24] і [100, 24])
 Фактичний результат: accrued(13) = 26 (очікувалось 24); accrued(100) = 200 (очікувалось 24); accrued(12) = 24 — на самій межі коректно
-Джерело: виконання тест-класів проти v1 (замініть на фрагмент target/surefire-reports/*.txt після вашого mvn clean test)
+Джерело: виконання тест-класів проти v1 
