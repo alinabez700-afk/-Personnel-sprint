@@ -1,0 +1,4 @@
+﻿BUG-010 — PayrollCalculator.hourlyRate округлює вниз замість HALF_UP
+Тест: PayrollCalculatorTest.hourlyRateIsMonthlyDividedBy168 (запуск [25000.00, 148.81])
+Фактичний результат: hourlyRate(25000.00) = 148.80 замість 148.81; hourlyRate(10000.00) = 59.52 коректно
+Джерело: target/surefire-reports, mvn clean test від 19.11.2026; повний вивід — файли ua.kpi.tzyapz.personal.*.txt у цій папці

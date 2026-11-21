@@ -28,5 +28,7 @@ public class F20WrongPasswordShowsInvalidCredentialsTest {
     new WebDriverWait(driver, Duration.ofSeconds(20))
         .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".oxd-alert-content-text")));
     assertThat(driver.findElement(By.cssSelector(".oxd-alert-content-text")).getText(), is("Invalid credentials"));
+    // verifyElementPresent css=button[type='submit'] (ми й далі на сторінці входу; м'яка перевірка в .side)
+    assertTrue(driver.findElements(By.cssSelector("button[type='submit']")).size() > 0);
   }
 }

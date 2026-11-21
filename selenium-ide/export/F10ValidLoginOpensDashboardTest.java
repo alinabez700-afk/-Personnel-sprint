@@ -30,5 +30,7 @@ public class F10ValidLoginOpensDashboardTest {
     new WebDriverWait(driver, Duration.ofSeconds(20))
         .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".oxd-topbar-header-breadcrumb h6")));
     assertThat(driver.findElement(By.cssSelector(".oxd-topbar-header-breadcrumb h6")).getText(), is("Dashboard"));
+    // verifyElementPresent css=.oxd-userdropdown-tab (м'яка перевірка в .side)
+    assertTrue(driver.findElements(By.cssSelector(".oxd-userdropdown-tab")).size() > 0);
   }
 }

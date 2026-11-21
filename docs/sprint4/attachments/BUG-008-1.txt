@@ -1,0 +1,4 @@
+﻿BUG-008 — LeaveCalculator.durationDays не враховує останній день періоду
+Тест: LeaveCalculatorTest.durationWithinWorkWeek; LeaveCalculatorTest.durationSkipsWeekends
+Фактичний результат: durationDays(07.09, 11.09) = 4 замість 5; durationDays(09.09, 09.09) = 0 замість 1
+Джерело: target/surefire-reports, mvn clean test від 19.11.2026; повний вивід — файли ua.kpi.tzyapz.personal.*.txt у цій папці
