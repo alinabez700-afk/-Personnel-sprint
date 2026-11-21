@@ -1,12 +1,11 @@
-# Протокол запуску (Surefire) — модуль personal v1
+﻿# Протокол запуску (Surefire) — модуль personal v1
 
-Дата: 17.11.2026 · Команда E · JDK 17 (Temurin), Maven 3.9 · Тест-класи: LeaveCalculatorTest, PayrollCalculatorTest, EmployeeValidatorTest.
-Ці результати отримано виконанням тест-класів проти коду v1 (72 запуски, з урахуванням параметризованих). Після `mvn clean test` на вашій машині рядок Surefire має збігатися; якщо відрізняється — вставте свій вивід і поправте таблицю.
+Дата: 19.11.2026 · Команда E · Windows 11, JDK 17.0.21 (Temurin), Maven 3.9.9 · Тест-класи: LeaveCalculatorTest, PayrollCalculatorTest, EmployeeValidatorTest, LoginUiTest, NavigationUiTest.
+Результати реального прогону на модулі v1 (без змін).
 
-- Команда 1 (юніт): `mvn clean test` → `Tests run: 72, Failures: 13, Errors: 0, Skipped: 0` → BUILD FAILURE (очікувано: червоні тести — закладені дефекти модуля)
-- Команда 2 (усе): `mvn test -DexcludedGroups=none` → юніт-частина та сама (72 / 13); UI-набір: 8 методів — Failures: 0 (⏳ підтвердити прогоном на demo, фактичний рядок `Tests run: 80, Failures: 13` вставити сюди)
-- Звіти: `target/surefire-reports/*.txt`, `TEST-*.xml`
-
+- Команда 1 (юніт): `mvn clean test` → `Tests run: 72, Failures: 13, Errors: 0, Skipped: 0` → BUILD FAILURE (13 червоних тестів — закладені дефекти v1), час 53,5 с
+- Команда 2 (усе): `mvn test "-DexcludedGroups=none"` → `Tests run: 80, Failures: 13, Errors: 0, Skipped: 0` (72 юніт + 8 UI; усі 8 UI-тестів пройшли, червоні тільки ті самі 13 юніт-запусків), час 1 хв 53 с
+- Звіти: `docs/sprint4/attachments/ua.kpi.tzyapz.personal.*.txt`
 ## Червоні тести і дефекти (кожен червоний тест = звіт BUG-NNN)
 | Тест (клас.метод[запуск]) | Вимога | Expected / but was | BUG |
 |---|---|---|---|
@@ -25,3 +24,6 @@
 | EmployeeValidatorTest.minimumAgeSixteenOnHireDate[2008-02-29, 2024-02-28, false] | BL-80 | expected: <false> but was: <true> | BUG-012 |
 
 13 червоних запусків → 6 дефектів (BUG-007…012). Решта 59 запусків зелені. Червоні тести лишаються в наборі для верифікації на v2 (спринт 5).
+
+
+Повторні запуски UI (mvn test -DexcludedGroups=none): 2 з 2, результат однаковий: Tests run: 80, Failures: 13.
